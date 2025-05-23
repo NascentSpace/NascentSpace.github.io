@@ -1,0 +1,84 @@
+html, body {margin: 0; height: 100%; overflow: scroll}
+
+:root {
+    --accent-clr: red
+}
+
+body {
+  background: rgb(4,2,39);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 20%, rgb(20, 22, 24) 100%);
+  color: rgb(255, 255, 255);
+  font-family: Verdana;
+  margin: 0;
+  overflow:scroll;
+}
+
+.topbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 60px;
+  margin-top:0;
+  border-bottom: 3mm ridge rgba(14, 17, 29, 0.8);
+  background-color: white;
+}
+
+.nav {
+ line-height:40px;
+ background-color: var(--accent-clr);
+ font-size:18px;
+ font-weight:700;
+ text-transform:uppercase;
+ letter-spacing:0.2em;
+ margin-left:0;
+ margin-top:0;
+}
+
+ul.nav > li {
+  background-color: var(--accent-clr);
+  display: inline-block;
+  padding: 10px 10px;
+}
+ul.nav > li:hover {
+ background: linear-gradient(90deg, rgb(255, 0, 0) 10%, rgb(199, 0, 0) 50%, rgb(255, 0, 0) 90%);
+}
+
+ul.nav > li > a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+ul.nav > li:hover > a {
+    color: rgb(0, 0, 0);
+}
+
+.rainbowcube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation-name: cycle;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    transition: transform 0.3s linear;
+}
+
+.rainbowcube:hover{
+    transform:rotate(360deg)
+}
+
+@keyframes cycle {
+    0% {background-color:red; left:0px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    100% {background-color:red; left:400px; top:400px;}
+}
+
+button {
+    transition: transform 0.3s linear;
+    margin: 20px;
+}
+
+button:hover {
+    transform: rotate(45deg);
+}
