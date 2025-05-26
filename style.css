@@ -1,17 +1,19 @@
-html, body {margin: 0px; height: 100%; width: 100%;}
+html {margin: 0px; height: 100%; width: 100%;}
 
 :root {
     --accent-clr: red
 }
 
+head{
+}
+
 .topbar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  height: 60px;
-  margin-top:0;
-  border-bottom: 10px ridge rgba(14, 17, 29, 0.8);
-  background-color: rgb(255, 255, 255);
+    position: sticky;
+    top: 0;
+     height: 60px;
+    margin-top:0;
+    border-bottom: 10px ridge rgba(14, 17, 29, 0.8);
+    background-color: rgb(255, 255, 255);
 }
 
 .nav {
@@ -27,17 +29,17 @@ html, body {margin: 0px; height: 100%; width: 100%;}
 }
 
 ul.nav > li {
-  background-color: var(--accent-clr);
-  display: inline-block;
-  padding: 10px;
+    background-color: var(--accent-clr);
+    display: inline-block;
+    padding: 10px;
 }
 ul.nav > li:hover {
- background: linear-gradient(90deg, rgb(255, 0, 0) 10%, rgb(199, 0, 0) 50%, rgb(255, 0, 0) 90%);
+    background: linear-gradient(90deg, rgb(255, 0, 0) 10%, rgb(199, 0, 0) 50%, rgb(255, 0, 0) 90%);
 }
 
 ul.nav > li > a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
 
 ul.nav > li:hover > a {
@@ -48,6 +50,7 @@ body {
     background: linear-gradient(0deg, rgb(0, 0, 0) 20%, rgb(20, 22, 24) 100%);
     color: rgb(255, 255, 255);
     font-family: Verdana;
+    position: relative;
 }
 
 .container{
@@ -60,26 +63,27 @@ body {
 
 .gridcontainer{
     position: relative;
+    top: 180px;
     background-color: antiquewhite;
     margin:auto;
-    padding: 10px;
     width: 220px;
     height: 220px;
     transform: rotate(45deg);
+    align-items: center;
 }
 
 button {
-    transition: transform, background-color, 0.7s  ease;
+    transition: transform, background-color, color, 0.7s  ease;
     width: 100px;
     height: 100px;
     background-color: black;
     color: beige;
-    margin: 16px;
 }
 
 button:hover {
-    transform: rotate(45deg);
+    transform: rotate(225deg);
     background-color: azure;
+    color: black;
 }
 
 .content{
