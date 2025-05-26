@@ -1,13 +1,15 @@
 html {margin: 0px; height: 100%; width: 100%;}
 
 :root {
-    --accent-clr: red
+    --accent-clr: red;
+    --base-clr: black;
 }
 
 head{
 }
 
 .topbar {
+    z-index: 3;
     position: sticky;
     top: 0;
      height: 60px;
@@ -28,39 +30,55 @@ head{
     font-size:18px;
 }
 
+.nav > li:hover > a{
+    color:black;
+
+}
+
 ul.nav > li {
     background-color: var(--accent-clr);
     display: inline-block;
     padding: 10px;
+    transition:color,0.4s ease;
 }
 ul.nav > li:hover {
-    background: linear-gradient(90deg, rgb(255, 0, 0) 10%, rgb(199, 0, 0) 50%, rgb(255, 0, 0) 90%);
-}
-
-ul.nav > li > a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-
-ul.nav > li:hover > a {
-    color: rgb(0, 0, 0);
+    color:black
 }
 
 body {
-    background: linear-gradient(0deg, rgb(0, 0, 0) 20%, rgb(20, 22, 24) 100%);
+    background: linear-gradient(0deg, rgb(85, 85, 85) 20%, rgb(10, 11, 12) 100%);
     color: rgb(255, 255, 255);
     font-family: Verdana;
     position: relative;
+    margin:0px;
 }
 
 .container{
     position: relative;
     width: auto;
-    height: fit-content; margin: 20px; padding: 5px;
-    background: rgba(10, 168, 116, 0.322);
+    height: 800px; margin: 20px; padding: 5px;
+    background: var(--base-clr);
+    padding:20px;
     border-radius: 0px 25px;
+
 }
 
+.container > img{
+    border: 5px;
+    border-style:solid;
+    border-color: red;
+    border-radius: 0px 25px;
+    height: 350px;
+}
+
+.content{
+    background: rgba(148, 148, 148, 0.445);
+    padding: 10px;
+    margin: 20px;
+    width: fit-content;;
+    display: grid;
+    border-radius: 10px;
+}
 .gridcontainer{
     position: relative;
     top: 180px;
@@ -74,8 +92,8 @@ body {
 
 button {
     transition: transform, background-color, color, 0.7s  ease;
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: auto;
     background-color: black;
     color: beige;
 }
@@ -86,12 +104,7 @@ button:hover {
     color: black;
 }
 
-.content{
-    background: rgba(255, 255, 255, 0.322);
-    padding: 10px;
-    margin:10px;
-    border-radius: 10px;
-}
+
 
 .socials{
     bottom: 0;

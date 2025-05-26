@@ -9,9 +9,26 @@ function TestsFunction() {
     
 
 function AboutFunction() {
-    var C = document.getElementsByClassName("container")
-    var D = document.getElementsByName("container")
-    var A = document.getElementById("About");
+    var A = document.getElementById("About"), B = document.getElementById("Portfolio"), C = document.getElementById("Contact");
+    B.style.display = "none";
     C.style.display = "none";
     A.style.display = "block";
+}
+
+function PortfolioFunction() {
+    var A = document.getElementById("Portfolio"), B = document.getElementById("About"), C = document.getElementById("Contact");
+    B.style.display = "none";
+    C.style.display = "none";
+    A.style.display = "block";
+}
+
+function ContactFunction() {
+    var A = document.getElementById("Contact"), B = document.getElementById("Portfolio"), C = document.getElementById("About");
+    B.style.display = "none";
+    C.style.display = "none";
+    A.style.display = "block";
+}
+
+function Fade() {
+    ("p").fadeOut()
 }
