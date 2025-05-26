@@ -102,6 +102,10 @@ button:hover {
     background-color: rgb(27, 65, 65);
 }
 
+.cntctcontainer{
+    background-color: rgba(82, 44, 44, 0.664);
+}
+
 /* my fuckass cube*/
 .rainbowcube {
     width: 100px;
