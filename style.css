@@ -154,29 +154,3 @@ button:hover {
 
 /* Testing stuff here */
 
-.page {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  clip-path: circle(100% at 50% 50%);
-  transition: clip-path 0.5s;
-}
-
-.page:not(:first-child) {
-  z-index: 0;
-}
-
-.usage {
-  position: absolute;
-  top: 40px;
-  line-height: 50px;
-  z-index: 1000;
-  color: white;
-  font-size: 20px;
-  width: 100%;
-  text-align: center;
-  font-family: "Arial Black", Gadget, sans-serif;
-  pointer-events: none;
-}
