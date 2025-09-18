@@ -8,6 +8,11 @@ var Panel1 = false;
 var Panel2 = false;
 var Panel3 = false;
 
+var Menu1 = false;
+var Menu2 = false;
+var Menu3 = false;
+var Menu4 = false;
+
 function TestsFunction() {
     var T = document.getElementById("TestsDiv");
     if (T.style.display==="none"){
@@ -121,6 +126,52 @@ function testFunction3() {
     }
 }
 
-if (code){
-    yeah
+
+
+function menuexpand1() {
+    var A = document.getElementById("1")
+
+    if (Menu1){
+        A.classList.remove('expanded');
+        Menu1 = false;
+    }else{
+        A.classList.add('expanded');
+        Menu1 = true;
+    }
+}
+
+function menuexpand2() {
+    var A = document.getElementById("2")
+
+    if (Menu2){
+        A.classList.remove('expanded');
+        Menu2 = false;
+    }else{
+        A.classList.add('expanded');
+        Menu2 = true;
+    }
+}
+
+function menuexpand3() {
+    var A = document.getElementById("3")
+
+    if (Menu3){
+        A.classList.remove('expanded');
+        Menu3 = false;
+    }else{
+        A.classList.add('expanded');
+        Menu3 = true;
+    }
+}
+
+function menuexpand4() {
+    var A = document.getElementById("4")
+
+    if (Menu4){
+        A.classList.remove('expanded');
+        Menu4 = false;
+    }else{
+        A.classList.add('expanded');
+        Menu4 = true;
+    }
 }
