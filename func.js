@@ -4,6 +4,10 @@ $(document).ready(function() {
   $('.page').first().css('z-index', 2);
 });
 
+var Panel1 = false;
+var Panel2 = false;
+var Panel3 = false;
+
 function TestsFunction() {
     var T = document.getElementById("TestsDiv");
     if (T.style.display==="none"){
@@ -13,7 +17,6 @@ function TestsFunction() {
     }
 }
     
-
 function AboutFunction() {
     var A = document.getElementById("About"), B = document.getElementById("Portfolio"), C = document.getElementById("Contact");
     B.style.display = "none";
@@ -40,7 +43,84 @@ function Fade() {
 }
 
 //Testing zone
-function testFunction() {
-    var A = document.getElementsByClassName("Square");
-    A.length = A.length + 1;
+function testFunction1() {
+    var A = document.getElementById("Box1");
+    print
+
+    if(Panel2){
+        testFunction2()
+    }
+    if(Panel3){
+        testFunction3()
+    }
+
+    switch(Panel1) {
+        case true:
+        A.classList.remove('transin');
+        A.classList.add('transout');
+        Panel1 = false;
+        break;
+
+        case false:
+        A.classList.remove('transout');
+        A.classList.add('transin');
+        Panel1 = true;
+        break;
+    }
+}
+
+function testFunction2() {
+    var A = document.getElementById("Box2");
+    print
+
+    if(Panel1){
+        testFunction1()
+    }
+    if(Panel3){
+        testFunction3()
+    }
+
+    switch(Panel2) {
+        case true:
+        A.classList.remove('transin');
+        A.classList.add('transout');
+        Panel2 = false;
+        break;
+
+        case false:
+        A.classList.remove('transout');
+        A.classList.add('transin');
+        Panel2 = true;
+        break;
+    }
+}
+
+function testFunction3() {
+    var A = document.getElementById("Box3");
+    print
+
+    if(Panel1){
+        testFunction1()
+    }
+    if(Panel2){
+        testFunction2()
+    }
+
+    switch(Panel3) {
+        case true:
+        A.classList.remove('transin');
+        A.classList.add('transout');
+        Panel3 = false;
+        break;
+
+        case false:
+        A.classList.remove('transout');
+        A.classList.add('transin');
+        Panel3 = true;
+        break;
+    }
+}
+
+if (code){
+    yeah
 }

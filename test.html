@@ -6,18 +6,40 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
         <script type="text/javascript" src="func.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                $(".li").click(function(){
+                    $("p").fadeOut();
+                });
+            });
+        </script>
     </head>
     <body>
     <div class="topbar">
         <ul class="nav">
-            <li onclick="transition()">Transition time</li>
+            <li onclick='testFunction1()'>1</li>
+            <li onclick='testFunction2()'>2</li>
+            <li onclick='testFunction3()'>3</li>
         </ul>
     </div>
         <background>
 
         </background>
+
+        <div class="box transout" id="Box1" style="display:block">
+            This is a test this is a test
+        </div>
+        <div class="box transout" id="Box2" style="display:block">
+            This is a test this is a test
+        </div>
+        <div class="box transout" id="Box3" style="display:block">
+            This is a test this is a test
+        </div>
     </body>
 
-    
+    <!--<div class="socials">
+        <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+    </div> -->
 
 </html>
