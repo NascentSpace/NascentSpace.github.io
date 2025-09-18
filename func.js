@@ -129,49 +129,77 @@ function testFunction3() {
 
 
 function menuexpand1() {
-    var A = document.getElementById("1")
+    var M1 = document.getElementById("1")
+    var M2 = document.getElementById("2")
+    var M3 = document.getElementById("3")
+    var M4 = document.getElementById("4")
+    M1.style.zIndex = "100000";
+    M2.style.zIndex = "1";
+    M3.style.zIndex = "1";
+    M4.style.zIndex = "1";
 
     if (Menu1){
-        A.classList.remove('expanded');
+        M1.classList.remove('expanded');
         Menu1 = false;
     }else{
-        A.classList.add('expanded');
+        M1.classList.add('expanded');
         Menu1 = true;
     }
 }
 
 function menuexpand2() {
-    var A = document.getElementById("2")
+    var M1 = document.getElementById("1")
+    var M2 = document.getElementById("2")
+    var M3 = document.getElementById("3")
+    var M4 = document.getElementById("4")
+    M1.style.zIndex = "1";
+    M2.style.zIndex = "100000";
+    M3.style.zIndex = "1";
+    M4.style.zIndex = "1";
 
     if (Menu2){
-        A.classList.remove('expanded');
+        M2.classList.remove('expanded');
         Menu2 = false;
     }else{
-        A.classList.add('expanded');
+        M2.classList.add('expanded');
         Menu2 = true;
     }
 }
 
 function menuexpand3() {
-    var A = document.getElementById("3")
+    var M1 = document.getElementById("1")
+    var M2 = document.getElementById("2")
+    var M3 = document.getElementById("3")
+    var M4 = document.getElementById("4")
+    M1.style.zIndex = "1";
+    M2.style.zIndex = "1";
+    M3.style.zIndex = "1000";
+    M4.style.zIndex = "1";
 
     if (Menu3){
-        A.classList.remove('expanded');
+        M3.classList.remove('expanded');
         Menu3 = false;
     }else{
-        A.classList.add('expanded');
+        M3.classList.add('expanded');
         Menu3 = true;
     }
 }
 
 function menuexpand4() {
-    var A = document.getElementById("4")
+    var M1 = document.getElementById("1")
+    var M2 = document.getElementById("2")
+    var M3 = document.getElementById("3")
+    var M4 = document.getElementById("4")
+    M1.style.zIndex = "1";
+    M2.style.zIndex = "1";
+    M3.style.zIndex = "1";
+    M4.style.zIndex = "1000";
 
     if (Menu4){
-        A.classList.remove('expanded');
+        M4.classList.remove('expanded');
         Menu4 = false;
     }else{
-        A.classList.add('expanded');
+        M4.classList.add('expanded');
         Menu4 = true;
     }
 }
