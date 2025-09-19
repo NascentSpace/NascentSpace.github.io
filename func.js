@@ -147,20 +147,14 @@ function menuexpand4() {
 
 function showcontent(setid){
     var C = document.getElementById(setid)
-    var XB = document.getElementById("xbutton1")
     C.classList.remove('hidden');
     C.classList.add('visible');
-    XB.classList.remove('hidden');
-    XB.classList.add('visible');
 }
 
 function hidecontent(setid){
     var C = document.getElementById(setid)
-    var XB = document.getElementById("xbutton1")
     C.classList.remove('visible');
     C.classList.add('hidden');
-    XB.classList.remove('visible');
-    XB.classList.add('hidden');
 }
 
 function fade(element) {
