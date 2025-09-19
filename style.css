@@ -2,7 +2,7 @@ html {margin: 0px; height: 100%; width: 100%; overflow:hidden}
 
 :root {
     --accent-clr: red;
-    --base-clr: rgba(0, 0, 0, 0.63);
+    --base-clr: rgb(0, 0, 0);
     --transtime: 0.6s;
 }
 
@@ -11,7 +11,6 @@ head{
 
 
 body {
-    background-image: url(img/Fogstreet.png);
     background-size: auto, cover;
   /*  background-size: auto, cover, auto; */
     background-repeat: repeat;
@@ -65,12 +64,17 @@ ul.nav > li:hover {
 }
 
 .container{
-    position: relative;
-    width: auto;
-    height: auto; margin: 20px;
+    position: absolute;
+    width: calc(100vw - 200px); height: calc(100vh - 460px);
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 80px;
     background: var(--base-clr);
-    padding:20px;
+    padding: 20px;
     border-radius: 0px 25px;
+    overflow:hidden;
+    border-style: ridge;
+    z-index: 20;
 }
 
 .container > img{
@@ -85,9 +89,21 @@ ul.nav > li:hover {
     background: rgba(148, 148, 148, 0.445);
     padding: 10px;
     margin: 20px;
-    width: fit-content;;
+    width: fit-content;
     display: grid;
     border-radius: 10px;
+}
+
+.visible{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+.hidden{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.1s, opacity 0.1s linear;
 }
 
 button{
@@ -125,98 +141,23 @@ button:hover {
     background-color: rgba(82, 44, 44, 0.664);
 }
 
-/* my fuckass cube*/
-.rainbowcube {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    animation-name: cycle;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-direction: alternate;
-    transition: transform 0.3s linear;
-    z-index: 2;
-}
-
-.rainbowcube:hover{
-    transform:rotate(360deg)
-}
-
-@keyframes cycle {
-    0% {background-color:red; left:0%; top:0%;}
-    50%  {background-color:blue; left:20%; top:50%;}
-    100% {background-color:lime; left:80%; top:100%;}
-}
-
 /* Testing stuff here */
-
-.box{
-    -moz-transition: var(--transtime);
-    -o-transition: var(--transtime);
-    -webkit-transition: var(--transtime);
-    transition: var(--transtime);
-    position: absolute;
-    margin-inline: auto;
-    width: 5rem;
-    height: 5rem;
-    background-color: aliceblue;
-    color: black
-}
-
-.box:first-child {
-    left:45%;
-    top: 100%;
-}
-
-.box:nth-child(2) {
-    left:40%;
-    top: 30rem;
-}
-
-.box:nth-child(3) {
-    left:5rem;
-    top: 49.5rem;
-    background-color: red;
-}
-
-.box.transout{
-    width: 5vw;
-    height: 1em;
-    padding: 1rem;
-    margin-top: 1em;
-    margin-left: 3em;
-    margin-right: 1em;
-}
-
-.box.transin{
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    margin-top: 0em;
-    margin-left: 0em;
-    margin-right: 0em;
-    padding: 1rem;
-    border-radius: 0rem;
-    z-index: 5;
-}
 
 .menubox{
     -moz-transition: var(--transtime);
     -o-transition: var(--transtime);
     -webkit-transition: var(--transtime);
     transition: var(--transtime);
-    transition-property: width,height,position,background-color,color,transform,top,left;
-    text-align: center;
+    transition-property: font-size,width,height,position,background-color,color,transform,top,left,border-width,ease-in-out;
     width: 8rem;
     height: 8rem;
     position: absolute;
-    background-color: rgb(7, 8, 8);
+    background-color: rgb(34, 22, 15);
     color: rgb(240, 248, 255);
     border-width: 0.5rem;
     box-sizing: border-box;
     border-style: double;
+    font-size: 1.0rem;
 }
 
 .menubox:hover {
@@ -224,6 +165,7 @@ button:hover {
     border-width: 1rem;
     border-style: double;
     background-color: rgb(125, 189, 219);
+    font-size: 1.1rem;
 }
 
 .menubox:first-child {
@@ -247,15 +189,16 @@ button:hover {
 }
 
 .menubox.expanded{
+    transition-property: background-color 50.1s;
     margin-inline: auto;
-    top: -47vh;
-    left: -47vw;
-    width: 110vw;
-    height: 110vh;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
     z-index: 10000;
-    transform:rotate(-45deg);
-    color: rgb(240, 248, 255);
-    background-color: rgb(240, 248, 255);
+    transform:translate(calc(-50% + 8.0rem),calc(-50% + 8.0rem)) rotate(-45deg);
+    color: rgb(11, 14, 17);
+    background-color: rgba(26, 15, 23, 0.226);
 }
 
 .menubox > p{
@@ -281,11 +224,81 @@ button:hover {
 .gridcontainer{
     background-color: rgba(250, 235, 215, 0);
     position: absolute;
-    margin-top: -175px;
-    margin-left: 0;
-    top: 50%;
+    top: calc(50vh - 11.6rem);
     left: 50%;
-    width: 100px;
-    height: 100px;
+    width: 0;
+    height: 0;
     transform: rotate(45deg);
+}
+
+.xbutton{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    text-align: center;
+    vertical-align: center;
+    bottom: 15%;
+    left: 50%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 4rem;
+    transform: translate(-50%,-50%);
+}
+
+section {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100vh;
+}
+section .wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #790101;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+section .wave span {
+  position: absolute;
+  width: 325vh;
+  height: 325vh;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #000;
+}
+
+section .wave span:nth-child(1) {
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  animation: animate 15s linear infinite;
+}
+
+section .wave span:nth-child(2) {
+  border-radius: 40%;
+  background: rgba(20, 20, 20, 0.5);
+  animation: animate 15s linear infinite;
+}
+section .wave span:nth-child(3) {
+  border-radius: 42.5%;
+  background: rgba(20, 20, 20, 0.5);
+  animation: animate 25s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
 }

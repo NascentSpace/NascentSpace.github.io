@@ -4,10 +4,6 @@ $(document).ready(function() {
   $('.page').first().css('z-index', 2);
 });
 
-var Panel1 = false;
-var Panel2 = false;
-var Panel3 = false;
-
 var Menu1 = false;
 var Menu2 = false;
 var Menu3 = false;
@@ -48,92 +44,17 @@ function Fade() {
 }
 
 //Testing zone
-function testFunction1() {
-    var A = document.getElementById("Box1");
-    print
 
-    if(Panel2){
-        testFunction2()
-    }
-    if(Panel3){
-        testFunction3()
-    }
-
-    switch(Panel1) {
-        case true:
-        A.classList.remove('transin');
-        A.classList.add('transout');
-        Panel1 = false;
-        break;
-
-        case false:
-        A.classList.remove('transout');
-        A.classList.add('transin');
-        Panel1 = true;
-        break;
-    }
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-function testFunction2() {
-    var A = document.getElementById("Box2");
-    print
-
-    if(Panel1){
-        testFunction1()
-    }
-    if(Panel3){
-        testFunction3()
-    }
-
-    switch(Panel2) {
-        case true:
-        A.classList.remove('transin');
-        A.classList.add('transout');
-        Panel2 = false;
-        break;
-
-        case false:
-        A.classList.remove('transout');
-        A.classList.add('transin');
-        Panel2 = true;
-        break;
-    }
-}
-
-function testFunction3() {
-    var A = document.getElementById("Box3");
-    print
-
-    if(Panel1){
-        testFunction1()
-    }
-    if(Panel2){
-        testFunction2()
-    }
-
-    switch(Panel3) {
-        case true:
-        A.classList.remove('transin');
-        A.classList.add('transout');
-        Panel3 = false;
-        break;
-
-        case false:
-        A.classList.remove('transout');
-        A.classList.add('transin');
-        Panel3 = true;
-        break;
-    }
-}
-
-
 
 function menuexpand1() {
     var M1 = document.getElementById("1")
     var M2 = document.getElementById("2")
     var M3 = document.getElementById("3")
     var M4 = document.getElementById("4")
-    M1.style.zIndex = "100000";
+    M1.style.zIndex = "1000";
     M2.style.zIndex = "1";
     M3.style.zIndex = "1";
     M4.style.zIndex = "1";
@@ -141,9 +62,19 @@ function menuexpand1() {
     if (Menu1){
         M1.classList.remove('expanded');
         Menu1 = false;
+        hidecontent("Art")
+        unfade(M4)
+        unfade(M2)
+        unfade(M3)
     }else{
         M1.classList.add('expanded');
         Menu1 = true;
+        fade(M4)
+        fade(M2)
+        fade(M3)
+        sleep(250).then(() => {
+            showcontent("Art");
+        });
     }
 }
 
@@ -153,16 +84,26 @@ function menuexpand2() {
     var M3 = document.getElementById("3")
     var M4 = document.getElementById("4")
     M1.style.zIndex = "1";
-    M2.style.zIndex = "100000";
+    M2.style.zIndex = "1000";
     M3.style.zIndex = "1";
     M4.style.zIndex = "1";
 
     if (Menu2){
         M2.classList.remove('expanded');
         Menu2 = false;
+        hidecontent("Films")
+        unfade(M1)
+        unfade(M4)
+        unfade(M3)
     }else{
         M2.classList.add('expanded');
         Menu2 = true;
+        fade(M1)
+        fade(M4)
+        fade(M3)
+        sleep(250).then(() => {
+            showcontent("Films");
+        });
     }
 }
 
@@ -179,9 +120,19 @@ function menuexpand3() {
     if (Menu3){
         M3.classList.remove('expanded');
         Menu3 = false;
+        hidecontent("Games")
+        unfade(M1)
+        unfade(M2)
+        unfade(M4)
     }else{
         M3.classList.add('expanded');
         Menu3 = true;
+        fade(M1)
+        fade(M2)
+        fade(M4)
+        sleep(250).then(() => {
+            showcontent("Games");
+        });
     }
 }
 
@@ -195,11 +146,63 @@ function menuexpand4() {
     M3.style.zIndex = "1";
     M4.style.zIndex = "1000";
 
+    M4.style.pointerEvents = "none";
+
     if (Menu4){
         M4.classList.remove('expanded');
         Menu4 = false;
+        hidecontent("Contact")
+        M4.style.pointerEvents = "all";
     }else{
         M4.classList.add('expanded');
         Menu4 = true;
+        sleep(250).then(() => {
+            showcontent("Contact");
+            M4.style.pointerEvents = "all";
+        });
     }
+}
+
+function showcontent(setid){
+    var C = document.getElementById(setid)
+    var XB = document.getElementById("xbutton1")
+    C.classList.remove('hidden');
+    C.classList.add('visible');
+    XB.classList.remove('hidden');
+    XB.classList.add('visible');
+}
+
+function hidecontent(setid){
+    var C = document.getElementById(setid)
+    var XB = document.getElementById("xbutton1")
+    C.classList.remove('visible');
+    C.classList.add('hidden');
+    XB.classList.remove('visible');
+    XB.classList.add('hidden');
+}
+
+function fade(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 35);
+}
+
+function unfade(element) {
+    var op = 0.1;  // initial opacity
+    element.style.display = 'block';
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
+    }, 15);
 }
