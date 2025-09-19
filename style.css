@@ -10,6 +10,26 @@ head{
 }
 
 
+::-webkit-scrollbar {
+  width: 4px;
+  border: 1px solid #d5d5d5;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgb(196, 9, 9);
+}
+
+ ::-webkit-scrollbar-thumb:horizontal{
+        background: red;
+        border-radius: 1px;
+ }
+
 body {
     background-size: auto, cover;
   /*  background-size: auto, cover, auto; */
@@ -85,41 +105,6 @@ ul.nav > li:hover {
     height: 15rem;
 }
 
-.content{
-    background: rgba(148, 148, 148, 0.445);
-    padding: 10px;
-    margin: 20px;
-    width: fit-content;
-    display: grid;
-    border-radius: 10px;
-}
-
-.visible{
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.5s linear;
-}
-
-.hidden{
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 0.1s, opacity 0.1s linear;
-}
-
-button{
-    transition: transform, background-color, color, 0.7s  ease;
-    width: auto;
-    height: auto;
-    background-color: black;
-    color: beige;
-}
-
-button:hover {
-    transform: rotate(45deg);
-    background-color: azure;
-    color: black;
-}
-
 .snazzy{
     background-color: green;
     color:black;
@@ -137,35 +122,108 @@ button:hover {
     background-color: rgb(27, 65, 65);
 }
 
+.content{
+    box-sizing: border-box;
+    position: absolute;
+    background: rgba(18, 29, 128, 0);
+    padding: 50px;
+    margin: 0px;
+    width: 100%;
+    height: calc(100% - 20px);
+    left: 50%;
+    top: 0px;
+    transform: translate(-50%);
+    color: white;
+}
+
+.content > p{
+    top: 0;
+    height: fit-content;
+    margin-top: 0px;
+    margin-bottom: 5%;
+    line-height: 2rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.visible{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+.hidden{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s linear;
+}
+
+button{
+    transition: transform, background-color, color, 0.7s  ease;
+    width: auto;
+    height: auto;
+    background-color: black;
+    color: beige;
+}
+
+button:hover {
+    transform: rotate(45deg);
+    background-color: azure;
+    color: black;
+}
+
 .cntctcontainer{
     background-color: rgba(82, 44, 44, 0.664);
 }
 
 /* Testing stuff here */
 
+.trans {
+    -moz-transition: var(--transtime) ease-in-out;
+    -o-transition: var(--transtime) ease-in-out;
+    -webkit-transition: var(--transtime) ease-in-out;
+    transition: var(--transtime) ease-in-out;    
+}
+
+.menutext {
+    position: absolute;
+    background-color: rgba(20, 62, 141, 0);
+    height: 100%;
+    width: 100%;
+    user-select: none;
+    display: inline-block;
+    justify-content: center;
+    align-items:center;
+    display: flex;
+    transform:rotate(-45deg);
+}
+
 .menubox{
-    -moz-transition: var(--transtime);
-    -o-transition: var(--transtime);
-    -webkit-transition: var(--transtime);
-    transition: var(--transtime);
-    transition-property: font-size,width,height,position,background-color,color,transform,top,left,border-width,ease-in-out;
+    -moz-transition: var(--transtime) ease-in-out;
+    -o-transition: var(--transtime) ease-in-out;
+    -webkit-transition: var(--transtime) ease-in-out;
+    transition: var(--transtime) ease-in-out;
+    transition-property: font-size,width,height,position,background-color,color,border-color,transform,top,left,border-width,ease-in-out;
     width: 8rem;
     height: 8rem;
     position: absolute;
-    background-color: rgb(34, 22, 15);
+    background-color: rgb(0, 0, 0);
     color: rgb(240, 248, 255);
     border-width: 0.5rem;
     box-sizing: border-box;
     border-style: double;
     font-size: 1.0rem;
+    border-color: rgb(131, 17, 17);
+    max-width: 60rem;
+    overflow: hidden;
 }
 
 .menubox:hover {
-    color: black;
-    border-width: 1rem;
-    border-style: double;
-    background-color: rgb(125, 189, 219);
+    color: rgb(255, 255, 255);
+    border-width: 0.8rem;
+    background-color: rgb(0, 0, 0);
     font-size: 1.1rem;
+    border-color: rgb(255, 255, 255);
 }
 
 .menubox:first-child {
@@ -190,35 +248,47 @@ button:hover {
 
 .menubox.expanded{
     transition-property: background-color 50.1s;
-    margin-inline: auto;
+
     top: 50%;
     left: 50%;
     width: 100vw;
     height: 100vh;
     z-index: 10000;
-    transform:translate(calc(-50% + 8.0rem),calc(-50% + 8.0rem)) rotate(-45deg);
+    transform:translate(calc(-50% + 4.0rem),calc(-50% + 4.0rem)) rotate(-45deg);
     color: rgb(11, 14, 17);
     background-color: rgba(26, 15, 23, 0.226);
+
+    width: calc(80vw - 200px); height: calc(100vh - 360px);
+    background: var(--base-clr);
+    padding-right: 17px;
+
+    overflow-y:scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    border-width: 0.5rem;
+    scrollbar-width: none;
+    font-size: 1.2rem;
+    max-width: 60rem;
 }
 
-.menubox > p{
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    margin-top: 40%;
+.menutitle{
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%,-50%);
     text-align: center;
-    vertical-align: middle;
-    height: fit-content;
-    width: auto;
-    transform:rotate(-45deg);
-    pointer-events: none;
+    font-size: 36px;
 }
 
-.menubox.expanded > p {
+.menubox.expanded > .menutext {
     display: none;
+    opacity: 0;
+}
+
+.menubox.expanded > .content{
+    position: absolute;
+    color: white;
 }
 
 .gridcontainer{
@@ -232,11 +302,6 @@ button:hover {
 }
 
 .xbutton{
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     pointer-events: none;
     user-select: none;
     position: absolute;
@@ -301,4 +366,12 @@ section .wave span:nth-child(3) {
   100% {
     transform: translate(-50%, -75%) rotate(360deg);
   }
+}
+
+.unselect{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;    
 }

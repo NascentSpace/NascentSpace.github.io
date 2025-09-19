@@ -28,21 +28,43 @@
 
     <body>
         <div>
+            <div class="menutitle">Welcome to the online portfolio of <br>Nascent Space</div>
+            <iframe frameborder="0" src="https://itch.io/embed/3565434" width="552" height="167"><a href="https://samcask.itch.io/canvasbound">Canvasbound by Samcask, tash_, Nascent Space</a></iframe>
+            <iframe frameborder="1" src="//www.youtube.com/embed/C8kSrkz8Hz8" width="300" height="500" style="border:none;"></iframe>
             <div class="gridcontainer">
                 <div class="menubox" onclick="menuexpand1()" id="1">
-                    <p>Art</p>
+                    <div class="menutext">ART</div>
+                    <div class="content hidden" id="Art" style="justify-content: center;display: flex;align-items: center;flex-direction: column;">
+                        <p>Gonna put a lil scrollable gallery of stuff here.</p> 
+                        <p>Maybe with some other sub pages to learn extra stuff about the different projects.</p>
+                    </div>
                 </div>
 
                 <div class="menubox" onclick="menuexpand2()" id="2">
-                    <p>Films</p>
+                    <div class="menutext">FILM</div>
+                    <div class="content hidden" id="Films" style="justify-content: center;display: flex;align-items: center;flex-direction: column;">
+                        <img src="NewProfile.png" style="margin: auto;width: 50%;">
+                        <p>Gonna embed some youtube video links here.</p> 
+                    </div>
                 </div>
 
                 <div class="menubox" onclick="menuexpand3()" id="3">
-                    <p>Games</p>
+                    <div class="menutext">GAMES</div>
+                    <div class="content hidden" id="Games">
+                        <p>I've made a couple small games over my years of participating in game jams! Most of my work done is in Godot.</p> 
+                        <iframe frameborder="0" src="https://itch.io/embed/3565434" width="100%" height="167"><a href="https://samcask.itch.io/canvasbound">Canvasbound by Samcask, tash_, Nascent Space</a></iframe>
+                        <iframe frameborder="0" src="https://itch.io/embed/3782655" width="100%" height="167"><a href="https://nascent-space.itch.io/euthanasia-coaster-simulator2025">Euthanasia Coaster Simulator 2025 by Nascent Space, Cryofennec, Mavis Mosby!, ballsticseal, Piers</a></iframe>
+                        <iframe frameborder="0" src="https://itch.io/embed/2301798" width="100%" height="167"><a href="https://nascent-space.itch.io/the-island-capital">The Island Capital by Nascent Space</a></iframe>
+                    </div>
                 </div>
 
                 <div class="menubox" onclick="menuexpand4()" id="4">
-                    <p>Contact</p>
+                    <div class="menutext">ABOUT</div>
+                    <div class="content hidden" id="About" style="justify-content: center;display: flex;align-items: center;flex-direction: column;">
+                        <img src="NewProfile.png" style="margin: auto;width: 50%;">
+                        <p>Hello! My name is Harrison Brown, a digital artist, filmmaker, animator, and game developer based in Sydney Australia.</p> 
+                        <p style="display: inline-block;">You can find me on most social media platforms through my <a href="https://linktr.ee/NascentSpace" style="color: red;">Linktree</a> here!</p>
+                    </div>
                 </div>
             </div>
             
@@ -56,9 +78,6 @@
             </div>
             <div class="container hidden" id="Games">
                 <div class="content">Dude this is awesome hell yeah I love videogames</div>
-            </div>
-            <div class="container hidden" id="Contact">
-                <div class="content">Call me!</div>
             </div>
         </div>
     </body>

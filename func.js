@@ -63,15 +63,9 @@ function menuexpand1() {
         M1.classList.remove('expanded');
         Menu1 = false;
         hidecontent("Art")
-        unfade(M4)
-        unfade(M2)
-        unfade(M3)
     }else{
         M1.classList.add('expanded');
         Menu1 = true;
-        fade(M4)
-        fade(M2)
-        fade(M3)
         sleep(250).then(() => {
             showcontent("Art");
         });
@@ -92,15 +86,9 @@ function menuexpand2() {
         M2.classList.remove('expanded');
         Menu2 = false;
         hidecontent("Films")
-        unfade(M1)
-        unfade(M4)
-        unfade(M3)
     }else{
         M2.classList.add('expanded');
         Menu2 = true;
-        fade(M1)
-        fade(M4)
-        fade(M3)
         sleep(250).then(() => {
             showcontent("Films");
         });
@@ -121,15 +109,9 @@ function menuexpand3() {
         M3.classList.remove('expanded');
         Menu3 = false;
         hidecontent("Games")
-        unfade(M1)
-        unfade(M2)
-        unfade(M4)
     }else{
         M3.classList.add('expanded');
         Menu3 = true;
-        fade(M1)
-        fade(M2)
-        fade(M4)
         sleep(250).then(() => {
             showcontent("Games");
         });
@@ -151,13 +133,13 @@ function menuexpand4() {
     if (Menu4){
         M4.classList.remove('expanded');
         Menu4 = false;
-        hidecontent("Contact")
+        hidecontent("About")
         M4.style.pointerEvents = "all";
     }else{
         M4.classList.add('expanded');
         Menu4 = true;
         sleep(250).then(() => {
-            showcontent("Contact");
+            showcontent("About");
             M4.style.pointerEvents = "all";
         });
     }
@@ -204,5 +186,5 @@ function unfade(element) {
         element.style.opacity = op;
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op += op * 0.1;
-    }, 15);
+    }, 55);
 }
