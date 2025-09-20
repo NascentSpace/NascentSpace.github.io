@@ -302,21 +302,29 @@ button:hover {
 }
 
 .xbutton{
+    transition: var(--transtime);
     pointer-events: none;
     user-select: none;
     position: absolute;
     text-align: center;
     vertical-align: center;
-    bottom: 15%;
-    left: 50%;
+    left: 4px;
+    top: -10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 4rem;
+    font-size: 3rem;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
 }
 
 .menubox.expanded > .xbutton{
-    left: 0px;
-    top: 0px;
+    left: 4px;
+    top: -10px;
     color: white;
+    opacity: 1;
+    transition-property: opacity; ;
+    visibility: visible;
+    display: block;
 }
 
 section {
