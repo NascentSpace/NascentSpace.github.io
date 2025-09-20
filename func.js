@@ -59,15 +59,19 @@ function menuexpand1() {
     M3.style.zIndex = "1";
     M4.style.zIndex = "1";
 
+    M1.style.pointerEvents = "none";
+
     if (Menu1){
         M1.classList.remove('expanded');
         Menu1 = false;
         hidecontent("Art")
+        M1.style.pointerEvents = "all";
     }else{
         M1.classList.add('expanded');
         Menu1 = true;
         sleep(250).then(() => {
             showcontent("Art");
+            M1.style.pointerEvents = "all";
         });
     }
 }
@@ -82,15 +86,19 @@ function menuexpand2() {
     M3.style.zIndex = "1";
     M4.style.zIndex = "1";
 
+    M2.style.pointerEvents = "none";
+
     if (Menu2){
         M2.classList.remove('expanded');
         Menu2 = false;
         hidecontent("Films")
+        M2.style.pointerEvents = "all";
     }else{
         M2.classList.add('expanded');
         Menu2 = true;
         sleep(250).then(() => {
             showcontent("Films");
+            M2.style.pointerEvents = "all";
         });
     }
 }
@@ -105,15 +113,19 @@ function menuexpand3() {
     M3.style.zIndex = "1000";
     M4.style.zIndex = "1";
 
+    M3.style.pointerEvents = "none";
+
     if (Menu3){
         M3.classList.remove('expanded');
         Menu3 = false;
         hidecontent("Games")
+        M3.style.pointerEvents = "all";
     }else{
         M3.classList.add('expanded');
         Menu3 = true;
         sleep(250).then(() => {
             showcontent("Games");
+            M3.style.pointerEvents = "all";
         });
     }
 }

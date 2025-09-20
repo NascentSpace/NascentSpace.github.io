@@ -33,7 +33,7 @@ head{
 body {
     background-size: auto, cover;
   /*  background-size: auto, cover, auto; */
-    background-repeat: repeat;
+    background-repeat: none;
     background-position: top right, top, top;
     background-attachment: fixed;
     color: rgb(255, 255, 255);
@@ -258,7 +258,7 @@ button:hover {
     color: rgb(11, 14, 17);
     background-color: rgba(26, 15, 23, 0.226);
 
-    width: calc(80vw - 200px); height: calc(100vh - 360px);
+    width: calc(80vw); height: calc(70vh);
     background: var(--base-clr);
     padding-right: 17px;
 
@@ -311,7 +311,12 @@ button:hover {
     left: 50%;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 4rem;
-    transform: translate(-50%,-50%);
+}
+
+.menubox.expanded > .xbutton{
+    left: 0px;
+    top: 0px;
+    color: white;
 }
 
 section {
@@ -324,6 +329,7 @@ section {
   min-height: 100vh;
   height: 100vh;
 }
+
 section .wave {
   position: absolute;
   left: 0;
@@ -374,4 +380,28 @@ section .wave span:nth-child(3) {
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;    
+}
+
+@media only screen and (orientation:portrait) {
+    
+    html{
+        overflow-y: hidden;
+    }
+    
+    body {
+        background-color: lightblue;
+        position: relative;
+        overflow: hidden;
+        height: 100dvh;
+    }
+ 
+    .menubox.expanded{
+        background-color: #790101;
+        width: 95vw;
+    }
+
+    .menutitle{
+        width: 90vw;
+        top: 15%;
+    }
 }
