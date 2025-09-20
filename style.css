@@ -311,16 +311,17 @@ button:hover {
     transition: var(--transtime);
     pointer-events: none;
     user-select: none;
-    position: absolute;
+    position: sticky;
     text-align: center;
     vertical-align: center;
-    left: 4px;
+    left: 0px;
     top: -10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 3rem;
+    font-size: 2rem;
     opacity: 0;
     visibility: hidden;
     display: none;
+    width: fit-content;
 }
 
 .menubox.expanded > .xbutton{
