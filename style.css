@@ -273,10 +273,11 @@ button:hover {
     position: absolute;
     color: white;
     left: 50%;
-    top: 25%;
+    top: 10vh;
     transform: translate(-50%,-50%);
     text-align: center;
     font-size: 36px;
+    width: 95vw;
 }
 
 .menubox.expanded > .menutext {
@@ -297,6 +298,13 @@ button:hover {
     width: 0;
     height: 0;
     transform: rotate(45deg);
+}
+
+.reflection{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background: -moz-element(#reflectthis) no-repeat;
 }
 
 .xbutton{
