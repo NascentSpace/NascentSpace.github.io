@@ -65,6 +65,7 @@ function menuexpand1() {
         M1.classList.remove('expanded');
         Menu1 = false;
         hidecontent("Art")
+        M1.scrollTop = 0;
     }else{
         M1.classList.add('expanded');
         Menu1 = true;
@@ -93,6 +94,7 @@ function menuexpand2() {
         M2.classList.remove('expanded');
         Menu2 = false;
         hidecontent("Films")
+        M2.scrollTop = 0;
     }else{
         M2.classList.add('expanded');
         Menu2 = true;
@@ -118,6 +120,7 @@ function menuexpand3() {
         M3.classList.remove('expanded');
         Menu3 = false;
         hidecontent("Games")
+        M3.scrollTop = 0;
     }else{
         M3.classList.add('expanded');
         Menu3 = true;
@@ -143,6 +146,7 @@ function menuexpand4() {
         M4.classList.remove('expanded');
         Menu4 = false;
         hidecontent("About")
+        M4.scrollTop = 0;
     }else{
         M4.classList.add('expanded');
         Menu4 = true;
