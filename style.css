@@ -214,7 +214,7 @@ button:hover {
     border-style: double;
     font-size: 1.0rem;
     border-color: rgb(131, 17, 17);
-    max-width: 60rem;
+    max-width: 70rem;
     overflow: hidden;
 }
 
@@ -266,7 +266,7 @@ button:hover {
     border-width: 0.5rem;
     scrollbar-width: none;
     font-size: 1.2rem;
-    max-width: 60rem;
+    max-width: 80rem;
 }
 
 .menutitle{
