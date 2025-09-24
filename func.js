@@ -61,8 +61,8 @@ particlesJS('particles-js',
     },
     "move": {
       "enable": true,
-      "speed": 6,
-      "direction": "none",
+      "speed": 1.2,
+      "direction": "bottom",
       "random": false,
       "straight": false,
       "out_mode": "out",
@@ -174,12 +174,7 @@ function menuexpand1() {
     M4.style.zIndex = "1";
     demouse()
 
-    if (Menu1){
-        M1.classList.remove('expanded');
-        Menu1 = false;
-        hidecontent("Art")
-        M1.scrollTop = 0;
-    }else{
+    if (!Menu1){
         M1.classList.add('expanded');
         Menu1 = true;
         console.log("art expanded")
@@ -201,12 +196,7 @@ function menuexpand2() {
     console.log("games expanded")
     demouse()
     console.log("Expandfunc")
-    if (Menu2){
-        M2.classList.remove('expanded');
-        Menu2 = false;
-        hidecontent("Films")
-        M2.scrollTop = 0;
-    }else{
+    if (!Menu2){
         M2.classList.add('expanded');
         Menu2 = true;
         console.log(Menu2)
@@ -228,12 +218,7 @@ function menuexpand3() {
 
     demouse()
 
-    if (Menu3){
-        M3.classList.remove('expanded');
-        Menu3 = false;
-        hidecontent("Games")
-        M3.scrollTop = 0;
-    }else{
+    if (!Menu3){
         M3.classList.add('expanded');
         Menu3 = true;
         sleep(250).then(() => {
@@ -254,12 +239,7 @@ function menuexpand4() {
 
     demouse()
 
-    if (Menu4){
-        M4.classList.remove('expanded');
-        Menu4 = false;
-        hidecontent("About")
-        M4.scrollTop = 0;
-    }else{
+    if (!Menu4){
         M4.classList.add('expanded');
         Menu4 = true;
         sleep(250).then(() => {
