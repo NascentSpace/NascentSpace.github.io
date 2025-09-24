@@ -1,13 +1,50 @@
 html {margin: 0px; height: 100%; width: 100%; overflow:hidden}
 
 :root {
-    --accent-clr: red;
+    --accent-clr: rgb(27, 82, 22);
     --base-clr: rgb(0, 0, 0);
     --transtime: 0.6s;
 }
 
+@property --gradient1{
+    syntax: '<number>';
+    initial-value: #447ee3;
+    inherits: false;
+}
+
+@property --gradient2{
+    syntax: '<number>';
+    initial-value: #6839ad;
+    inherits: false;
+}
+
+@property --gradient3{
+    syntax: '<number>';
+    initial-value: #912399;
+    inherits: false;
+}
+
 head{
 }
+
+@property --base-clr {
+    syntax: '<color>';
+    initial-value: rgb(13, 5, 32);
+    inherits: false;
+}
+
+@property --base-opp {
+    syntax: '<color>';
+    initial-value: rgb(204, 204, 206);
+    inherits: false;
+}
+
+@property --accent-clr {
+    syntax: '<color>';
+    initial-value: #447ee3;
+    inherits: false;
+}
+
 
 
 ::-webkit-scrollbar {
@@ -37,7 +74,7 @@ body {
     background-position: top right, top, top;
     background-attachment: fixed;
     color: rgb(255, 255, 255);
-    font-family: Verdana;
+    font-family: Arial, Helvetica, sans-serif;
     margin:0px;
 }
 
@@ -203,27 +240,31 @@ button:hover {
     -o-transition: var(--transtime) ease-in-out;
     -webkit-transition: var(--transtime) ease-in-out;
     transition: var(--transtime) ease-in-out;
-    transition-property: font-size,width,height,position,background-color,color,border-color,transform,top,left,border-width,ease-in-out;
+    transition-property: background,box-shadow,font-size,width,height,position,background-color,color,border-color,transform,top,left,border-width,ease-in-out;
     width: 8rem;
     height: 8rem;
     position: absolute;
-    background-color: rgb(0, 0, 0);
-    color: rgb(240, 248, 255);
-    border-width: 0.5rem;
+    background: linear-gradient(137deg,var(--gradient1) 0%, var(--gradient2) 74%, var(--gradient3) 100%);
+    background-color: var(--gradient1);
+    color: var(--base-opp);
+    border-width: 0.2rem;
     box-sizing: border-box;
-    border-style: double;
+    border-style:solid;
     font-size: 1.0rem;
-    border-color: rgb(131, 17, 17);
-    max-width: 70rem;
+    border-color: rgb(48, 88, 15);
+    max-width: 80rem;
     overflow: hidden;
+    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.397);
+    border-radius: 1cap;
+    box-shadow: inset 0px 0px 40px 10px #080d1d3f;
 }
 
 .menubox:hover {
     color: rgb(255, 255, 255);
-    border-width: 0.8rem;
-    background-color: rgb(0, 0, 0);
+    border-width: 0.3rem;
     font-size: 1.1rem;
-    border-color: rgb(255, 255, 255);
+    border-color: rgb(52, 131, 29);
+    box-shadow: inset 0px 0px 40px 10px #0103087c;
 }
 
 .menubox:first-child {
@@ -247,17 +288,15 @@ button:hover {
 }
 
 .menubox.expanded{
-    transition-property: background-color 50.1s;
+    transition-property: background, background-color 50.1s;
 
     top: 50%;
     left: 50%;
     z-index: 10000;
     transform:translate(calc(-50% + 4.0rem),calc(-50% + 4.0rem)) rotate(-45deg);
     color: rgb(11, 14, 17);
-    background-color: rgba(26, 15, 23, 0.226);
-
+    background: linear-gradient(137deg,rgba(36, 36, 56, 1) 0%, rgba(48, 32, 71, 1) 40%, rgba(46, 12, 36, 1) 100%);
     width: calc(80vw); height: calc(70vh);
-    background: var(--base-clr);
     padding-right: 17px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -298,13 +337,6 @@ button:hover {
     width: 0;
     height: 0;
     transform: rotate(45deg);
-}
-
-.reflection{
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    background: -moz-element(#reflectthis) no-repeat;
 }
 
 .xbutton{
@@ -367,61 +399,6 @@ button:hover {
     object-fit: cover;
 }
 
-section {
-  position: absolute;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  height: 100vh;
-}
-
-section .wave {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #790101;
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
-  transition: 0.5s;
-}
-section .wave span {
-  position: absolute;
-  width: 325vh;
-  height: 325vh;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -75%);
-  background: #000;
-}
-
-section .wave span:nth-child(1) {
-  border-radius: 45%;
-  background: rgba(20, 20, 20, 1);
-  animation: animate 15s linear infinite;
-}
-
-section .wave span:nth-child(2) {
-  border-radius: 40%;
-  background: rgba(20, 20, 20, 0.5);
-  animation: animate 15s linear infinite;
-}
-section .wave span:nth-child(3) {
-  border-radius: 42.5%;
-  background: rgba(20, 20, 20, 0.5);
-  animation: animate 25s linear infinite;
-}
-@keyframes animate {
-  0% {
-    transform: translate(-50%, -75%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -75%) rotate(360deg);
-  }
-}
-
 .unselect{
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -457,4 +434,51 @@ section .wave span:nth-child(3) {
     .gridcontainer{
         top: calc(50vh - 6.6rem);
     }
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #1a0722;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* ---- stats.js ---- */
+
+.count-particles{
+  background: #9292a5;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13E8E9;
+  font-size: .8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles{
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles{
+  -webkit-user-select: none;
+}
+
+#stats{
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles{
+  border-radius: 0 0 3px 3px;
 }

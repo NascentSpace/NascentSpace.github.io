@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
+    <div id="particles-js"></div>
+    <script src="particles.js"></script>
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Favicon.png">
     <head>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
         <script type="text/javascript" src="func.js"></script>
+
+        <script src="particles.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script>
             $(document).ready(function(){
@@ -16,24 +21,18 @@
         </script>
     </head>
     <background>
-        <section>
-            <div class="wave">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </section>
     </background>
     <body>
-        <div class="menutitle">Welcome to the online portfolio of <br>Nascent Space</div>
+        <div class="menutitle">Nascent Space</div>
         <div>
+            <div id="backer" style="background-color: rgba(155, 13, 13, 0);height: 100vh;width: 100vw;position: absolute;pointer-events: none;display: none;" onclick="multicollapse()"></div>
             <div class="gridcontainer">
                 <div class="menubox" onclick="menuexpand1()" id="1">
                     <div class="menutext">ART</div>
                     <div class="xbutton">X</div>
                     <div class="content hidden" id="Art" style="justify-content: center;align-items: center;flex-direction: column;">
-                        <p>3D RENDERS</p>
-                        <div class="gallery">
+                        <p style="margin: 0;">3D RENDERS</p>
+                        <div class="gallery" style="margin-bottom: 3rem;">
                             <img src="img/Fogstreet.png">
                             <img src="img\Surreal.png">
                             <img src="img\TestRender1.png">
@@ -82,12 +81,11 @@
                     <div class="xbutton">X</div>
                     <div class="content hidden" id="About" style="justify-content: center;display: flex;align-items: center;flex-direction: column;">
                         <img src="NewProfile.png" style="margin: auto;width: 50%;">
-                        <p>Hello! My name is Harrison, I'm a digital artist, filmmaker, animator, and game developer based in Sydney Australia. I've completed a Diploma in Screen and Media, specialising in Animation and VFX, and I'm currently at the tail end of a Bachelors in Filmmaking.</p> 
+                        <p>Hello! My name is Harrison, I'm a digital artist, filmmaker, animator, and game developer based in Sydney, Australia. I've completed a Diploma in Screen and Media, specialising in Animation and VFX, and I'm currently at the tail end of a Bachelors in Filmmaking.</p> 
                         <p style="display: inline-block;">You can find me on most social media platforms through my <a href="https://linktr.ee/NascentSpace" style="color: red;">Linktree</a> here!</p>
                     </div>
                 </div>
             </div>
-            <div class=""
         </div>
     </body>
 
