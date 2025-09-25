@@ -5,9 +5,9 @@ $(document).ready(function() {
 
 var loadingScreen = document.querySelector(".loadingScreen");
 
-//window.addEventListener('load', function() {
-//  loadingScreen.style.display = 'none';
-//})
+window.addEventListener('load', function() {
+  loadingScreen.classList.add('hidden');
+})
 
 particlesJS('particles-js',
   
