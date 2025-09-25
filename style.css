@@ -9,7 +9,7 @@ html {margin: 0px; height: 100%; width: 100%; overflow:hidden}
 @property --gradient1{
     syntax: "<color>";
     inherits: false;
-    initial-value: #144986;
+    initial-value: #ec0d50;
 }
 
 @property --gradient2{
@@ -21,7 +21,7 @@ html {margin: 0px; height: 100%; width: 100%; overflow:hidden}
 @property --gradient3{
     syntax: "<color>";
     inherits: false;
-    initial-value: #a10c31;
+    initial-value: #964156;
 }
 
 head{
@@ -51,6 +51,17 @@ head{
   initial-value: #210631;
 }
 
+.loadingScreen {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 ::-webkit-scrollbar {
   width: 4px;
   border: 1px solid #d5d5d5;
@@ -72,6 +83,7 @@ head{
  }
 
 body {
+    background: linear-gradient(126deg,rgba(77, 7, 143, 1) 0%, rgba(13, 1, 1, 1) 100%);
     background-size: auto, cover;
   /*  background-size: auto, cover, auto; */
     background-repeat: none;
@@ -231,6 +243,7 @@ button:hover {
     background-color: rgba(20, 62, 141, 0);
     height: 100%;
     width: 100%;
+    font-weight: bold;
     user-select: none;
     display: inline-block;
     justify-content: center;
@@ -400,7 +413,6 @@ button:hover {
     }
     
     body {
-        background-color: lightblue;
         position: relative;
         overflow: hidden;
         height: 100dvh;
@@ -425,7 +437,6 @@ button:hover {
   position: absolute;
   width: 120%;
   height: 120%;
-  background-color: var(--bg-color);
   background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;

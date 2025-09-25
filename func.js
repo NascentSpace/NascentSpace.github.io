@@ -3,6 +3,12 @@ $(document).ready(function() {
   $('.page').first().css('clip-path', 'circle(100% at 50% 50%)');
   $('.page').first().css('z-index', 2);
 
+var loadingScreen = document.querySelector(".loadingScreen");
+
+//window.addEventListener('load', function() {
+//  loadingScreen.style.display = 'none';
+//})
+
 particlesJS('particles-js',
   
   {
@@ -294,6 +300,7 @@ function multicollapse(){
     Menu4 = false;
     backthing.style.display = "none";
     demouse()
+    stopVideos()
 }
 
 function demouse(){
@@ -362,3 +369,19 @@ function unfade(element) {
     }, 55);
 }
 
+var stopVideo = function ( element ) {
+	var iframe = element.querySelector( 'iframe');
+	var video = element.querySelector( 'video' );
+	if ( iframe ) {
+		var iframeSrc = iframe.src;
+		iframe.src = iframeSrc;
+	}
+	if ( video ) {
+		video.pause();
+	}
+};
+
+const stopVideos = () => {
+  document.querySelectorAll('iframe').forEach(v => { v.src = v.src });
+  document.querySelectorAll('video').forEach(v => { v.pause() });
+};
